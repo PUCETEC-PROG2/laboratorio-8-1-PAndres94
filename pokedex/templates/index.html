@@ -1,13 +1,15 @@
 {% extends "base.html" %}
-{% block title %} POKEDEX{% endblock title%}
+{% block title %}POKEDEX{% endblock title %}
 {% block content %}
-    <p class="p-2">Hola, este es tu primer sitio en Django</p>
+    <p class="p-2">Bienvenido a tu pokedex</p>
     <ul class="list-group">
         {% for pokemon in pokemons %}
-        <li class="list-group-item">
+        <li class="list-group-item text-secondary">
             <a href="pokemon/{{pokemon.id}}">{{ pokemon | capfirst }}</a>
-            <p>{{pokemon.type}}</p>
+            <p>{{ pokemon.get_type_display }}</p>
         </li>
-        {% endfor %}
     </ul>
-{% endblock content %}
+            {% endfor %}
+    {% endblock content %}
+
+
