@@ -1,15 +1,23 @@
 {% extends "base.html" %}
 {% block title %}POKEDEX{% endblock title %}
 {% block content %}
-    <p class="p-2">Bienvenido a tu pokedex</p>
-    <ul class="list-group">
+    <p class="p-2">BIENVENIDO A TU POKEDEX</p>
+    <a href="{% url 'pokedex:add_pokemon' %}">AÑADE OTRO POKEMON</a>
+    <div class="card-group">
         {% for pokemon in pokemons %}
-        <li class="list-group-item text-secondary">
-            <a href="pokemon/{{pokemon.id}}">{{ pokemon | capfirst }}</a>
-            <p>{{ pokemon.get_type_display }}</p>
-        </li>
-    </ul>
-            {% endfor %}
-    {% endblock content %}
+            <div class="card">
+                <img src="{{ pokemon.picture.url }}" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pokemon }}</h4>
+                    <p class="card-text">
+                        Entrenador: {{ pokemon.trainer }} <br>
+                        Peso: {{ pokemon.weight }}
+                    </p>
+                </div>
+                <a href="pokemon/{{ pokemon.id}}" class ="btn btn-primary">CARACTERISTICAS</a>
+            </div>    
+        {% endfor %}
+    </div>
+{% endblock content %}
 
 
