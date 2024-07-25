@@ -3,6 +3,7 @@
 {% block content %}
     <p class="p-2">BIENVENIDO A TU POKEDEX</p>
     <a href="{% url 'pokedex:add_pokemon' %}">AÑADE OTRO POKEMON</a>
+    <a href="{% url 'logout' %}">ABANDONAR</a>
     <div class="card-group">
         {% for pokemon in pokemons %}
             <div class="card">
