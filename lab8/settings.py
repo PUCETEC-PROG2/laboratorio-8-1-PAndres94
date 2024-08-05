@@ -77,11 +77,11 @@ WSGI_APPLICATION = 'lab8.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pokedex_A',
+        'NAME': 'pokedex',
         'HOST': 'localhost',
         'PORT': '5432',
-        'USER': 'peter1',
-        'PASSWORD': 'pucetec'
+        'USER': 'cero96',
+        'PASSWORD': '1234'
     }
 }
 
@@ -122,8 +122,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Media Files
-MEDIA_URL = 'media/'
+#Media Files 
+MEDIA_URL ='media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Default primary key field type
@@ -131,7 +131,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#  Configuracion de login
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = 'pokedex:login'
+#CONFIGURA LOGIN 
+
+LOGIN_URL='/'
+REDIRECT_URL='/'
+LOGIN_URL='pokedex:login'
