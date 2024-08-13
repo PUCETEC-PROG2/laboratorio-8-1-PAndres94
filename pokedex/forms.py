@@ -11,6 +11,7 @@ class PokemonForm(forms.ModelForm):
             'weight' : forms.NumberInput(attrs={'class' : 'form-control'}),
             'height' : forms.NumberInput(attrs={'class' : 'form-control'}),
             'trainer' : forms.Select(attrs={'class' : 'form-control'}),
+            'picture': forms.ClearableFileInput(attrs={'class':'form-control'}),
         }
 
 class TrainerForm(forms.ModelForm):
@@ -23,5 +24,6 @@ class TrainerForm(forms.ModelForm):
             'first_name' : forms.TextInput(attrs={'class' : 'form-control'}),
             'last_name' : forms.TextInput(attrs={'class':'form-control'}),
             'birth_date': forms.DateInput(attrs={'class':'form-control'}),
-            'level': forms.NumberInput(attrs={'class':'form-control'}),            
+            'level': forms.NumberInput(attrs={'class':'form-control'}),
+            'picture': forms.ClearableFileInput(attrs={'class':'form-control'}),            
         }        
